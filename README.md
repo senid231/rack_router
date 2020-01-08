@@ -24,8 +24,8 @@ Or install it yourself as:
 ```ruby
 class App
   def call(env)
-    meth = env[Rack::Router::RACK_ROUTER_PATH]
-    public_send(env)
+    method_name = env[Rack::Router::RACK_ROUTER_PATH]
+    public_send(method_name, env)
   end
 
   def posts_index(env)
