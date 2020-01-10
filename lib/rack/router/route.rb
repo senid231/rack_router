@@ -32,7 +32,7 @@ module Rack
       end
 
       def print_route
-        str = "\t#{http_method} \t#{path}"
+        str = "\t#{http_method} \t/#{path}"
         str += "\tcontent_type=[#{content_type.join(',')}]" unless content_type.nil?
         str += "\taccept=[#{content_type.join(',')}]" unless accept.nil?
         str
