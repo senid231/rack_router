@@ -88,7 +88,7 @@ module Rack
       #   :content_type [Array<String>,String]
       def define_path(http_method, path, value, options = {})
         options = @current_options.dup.merge(options)
-        path = [@current_path, path].reject(&:empty?).join('/')
+        path = [@current_path, path].compact.join('/')
         @routes.add(http_method, path, value, options)
       end
 
